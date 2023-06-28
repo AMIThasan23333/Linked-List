@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-
 class Node
 {
 public:
@@ -13,8 +11,6 @@ public:
         this->next = NULL;
     }
 };
-
-
 void insert_at_tail(Node *&head, int v)
 {
     Node *newNode = new Node(v);
@@ -38,8 +34,6 @@ void insert_at_tail(Node *&head, int v)
          << "Inserted at tail" << endl
          << endl;
 }
-
-
 void print_linked_list(Node *head)
 {
     cout << endl;
@@ -53,9 +47,6 @@ void print_linked_list(Node *head)
     cout << endl
          << endl;
 }
-
-
-
 void insert_at_position(Node *head, int pos, int v)
 {
     Node *newNode = new Node(v);
@@ -71,8 +62,15 @@ void insert_at_position(Node *head, int pos, int v)
          << "Inserted at position " << pos << endl
          << endl;
 }
-
-
+void insert_at_head(Node *&head, int v)
+{
+    Node *newNode = new Node(v);
+    newNode->next = head;
+    head = newNode;
+    cout << endl
+         << "Inserted at head" << endl
+         << endl;
+}
 int main()
 {
     Node *head = NULL;
@@ -81,7 +79,8 @@ int main()
         cout << "Option 1: Insert at Tail" << endl;
         cout << "Option 2: Print Linked List" << endl;
         cout << "Option 3: Insert at any Position" << endl;
-        cout << "Option 4: Terminate" << endl;
+        cout << "Option 4: Insert at Head" << endl;
+        cout << "Option 5: Terminate" << endl;
         int op;
         cin >> op;
         if (op == 1)
@@ -102,11 +101,21 @@ int main()
             cin >> pos;
             cout << "Enter value: ";
             cin >> v;
-            insert_at_position(head, pos, v);
+            if (pos == 0)
+            {
+                insert_at_head(head, v);
+            }
+            else
+            {
+                insert_at_position(head, pos, v);
+            }
         }
         else if (op == 4)
         {
-            break;
+            int v;
+            cout << "Enter value: ";
+            cin >> v;
+            insert_at_head(head, v);
         }
     }
     return 0;
