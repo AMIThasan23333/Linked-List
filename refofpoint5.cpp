@@ -2,7 +2,6 @@
 using namespace std;
 
 void fun(int *p)
-
 {
    cout << &p << endl;  
 }
