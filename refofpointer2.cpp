@@ -3,7 +3,7 @@ using namespace std;
 
 void fun(int *p)
 
-/* if i sent a pointer from main and do not dereference inside the  fun it will notchange the value of ptr  */
+/* if i sent a pointer from main and do not dereference inside the  fun it will notchange the value of ptr .   */
 
 {
     p =NULL;
