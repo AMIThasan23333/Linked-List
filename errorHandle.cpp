@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node
 {
 public:
@@ -11,6 +12,8 @@ public:
         this->next = NULL;
     }
 };
+
+
 void insert_at_tail(Node *&head, int v)
 {
     Node *newNode = new Node(v);
@@ -34,6 +37,7 @@ void insert_at_tail(Node *&head, int v)
          << "Inserted at tail" << endl
          << endl;
 }
+
 void print_linked_list(Node *head)
 {
     cout << endl;
@@ -47,6 +51,7 @@ void print_linked_list(Node *head)
     cout << endl
          << endl;
 }
+
 void insert_at_position(Node *head, int pos, int v)
 {
     Node *newNode = new Node(v);
