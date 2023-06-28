@@ -3,10 +3,10 @@ using namespace std;
 
 void fun(int *p)
 
-//  it will print 20 as i changed  the refence 
+/* if i sent a pointer from main and do not dereference inside the  fun it will notchange the value of ptr  */
 
 {
-    *p =20;
+    p =NULL;
 
 }
 
