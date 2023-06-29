@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node
 {
 public:
@@ -11,6 +12,7 @@ public:
         this->next = NULL;
     }
 };
+
 void print_linekd_list(Node *head)
 {
     Node *tmp = head;
@@ -21,6 +23,8 @@ void print_linekd_list(Node *head)
     }
     cout << endl;
 }
+
+
 int size(Node *head)
 {
     Node *tmp = head;
@@ -32,6 +36,8 @@ int size(Node *head)
     }
     return count;
 }
+
+
 void insert(Node *head, int pos, int val)
 {
     Node *newNode = new Node(val);
@@ -44,12 +50,16 @@ void insert(Node *head, int pos, int val)
     newNode->next = tmp->next;
     tmp->next = newNode;
 }
+
+
 void insert_head(Node *&head, int val)
 {
     Node *newNode = new Node(val);
     newNode->next = head;
     head = newNode;
 }
+
+
 void insert_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -62,6 +72,8 @@ void insert_tail(Node *&head, Node *&tail, int val)
     tail->next = newNode;
     tail = newNode;
 }
+
+
 int main()
 {
     Node *head = new Node(10);
@@ -91,6 +103,7 @@ int main()
     {
         insert_tail(head, tail, val);
     }
+    
     else
     {
         insert(head, pos, val);

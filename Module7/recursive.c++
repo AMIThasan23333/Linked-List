@@ -1,8 +1,5 @@
-
-
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -14,20 +11,23 @@ public:
         this->next = NULL;
     }
 };
-
-
-void print_linekd_list(Node *head)
+void print_recursion(Node *n)
 {
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
-    }
-    cout << endl;
+    // base case
+    if (n == NULL)
+        return;
+    cout << n->val << " ";
+    print_recursion(n->next);
 }
+void print_reverse(Node *n)
+{
+    // base case
+    if (n == NULL)
+        return;
 
-
+    print_reverse(n->next);
+    cout << n->val << " ";
+}
 int main()
 {
     Node *head = new Node(10);
@@ -40,6 +40,8 @@ int main()
     b->next = c;
     c->next = d;
 
-    print_linekd_list(head);
+    print_recursion(head);
+    cout << endl;
+    print_reverse(head);
     return 0;
 }
